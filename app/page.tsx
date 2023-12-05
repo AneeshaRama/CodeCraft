@@ -2,6 +2,7 @@
 import CodeEditor from "@/components/code_editor/CodeEditor";
 import CodeOutput from "@/components/code_editor/CodeOutput";
 import Navbar from "@/components/navbar/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 import { useState } from "react";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <CodeEditor setOutput={setOutput} language={language} />
         <CodeOutput output={output} setOutput={setOutput} />
       </div>
+      <Toaster />
     </main>
   );
 }

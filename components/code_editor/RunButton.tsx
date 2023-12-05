@@ -1,6 +1,7 @@
 "use client";
 import axios from "axios";
 import React, { Dispatch, SetStateAction, useState } from "react";
+import { useToast } from "../ui/use-toast";
 
 type RunRequest = {
   codeSnippet: string;
@@ -14,9 +15,13 @@ const RunButton = (props: {
 }) => {
   const { setOutput, codeSnippet, language } = props;
   const [isLoading, setLoading] = useState(false);
+  const { toast } = useToast();
   const handleOnClick = async () => {
     if (language === "") {
-      console.log("Select the language");
+      toast({
+        title: "Please select the language",
+        variant: "destructive",
+      });
       return;
     }
     setLoading(true);
