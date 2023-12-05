@@ -75,6 +75,10 @@
   }
 }
 
+body{
+  overflow-x: hidden; 
+}
+
 .cm-editor{
   height: calc(100vh - 80px);
   font-size: 1.2rem;
@@ -84,6 +88,13 @@
 .cm-gutter{
   background-color: #020617;
   color: white;
+}
+
+.output {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 100000000;
 }
 
 @media screen and (min-width: 0px) and (max-width: 767px) {
